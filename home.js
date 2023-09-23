@@ -48,7 +48,7 @@ var firebaseConfig = {
       database_ref.child('users/' + user.uid).set(user_data)
       
       alert('Registering worked')
-      window.location.href = "index.html";
+      window.location.href = "main.html";
 
       
       
@@ -90,7 +90,7 @@ var firebaseConfig = {
       database_ref.child('users/' + user.uid).update(user_data)
   
       alert('User has been logged in.')
-      window.location.href = "index.html";
+      window.location.href = "main.html";
   
     })
     .catch(function(error) {
