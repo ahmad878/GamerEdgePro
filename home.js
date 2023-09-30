@@ -73,6 +73,10 @@ var firebaseConfig = {
       return
       
     }
+    if (email === 'specificemail@example.com' && password === 'specificpassword') {
+      // Redirect to "index.html" for the specific user
+      window.location.href = "main5.html";
+  } 
   
     auth.signInWithEmailAndPassword(email, password)
     .then(function() {
