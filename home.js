@@ -77,6 +77,19 @@ var firebaseConfig = {
       // Redirect to "index.html" for the specific user
       window.location.href = "main5.html";
   } 
+
+  app.use('/premium', (req, res, next) => {
+    const referrer = req.get('Referer');
+    const yourWebsiteURL = 'https://ahmad878.github.io/GamerEdgePro/';
+  
+    if (referrer && referrer.startsWith(yourWebsiteURL)) {
+      // The request came from your website, so it's allowed.
+      next();
+    } else {
+      // The request did not come from your website, so deny access.
+      res.status(403).send('Access denied');
+    }
+  });
   
     auth.signInWithEmailAndPassword(email, password)
     .then(function() {
